@@ -1,7 +1,11 @@
 <div class="text-center">
-  <h1>Edit Cocktail</h1>
+  <h1>Edit <%= @cocktail.name %></h1>
 </div>
 <%= render 'form', cocktail: @cocktail %>
+<div class="text-center">
+  <%= link_to @cocktail do %>
+  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  <% end %>
+</div>
 
-<%= link_to 'Show', @cocktail %> |
-<%= link_to 'Main Menu', cocktails_path %>
+
