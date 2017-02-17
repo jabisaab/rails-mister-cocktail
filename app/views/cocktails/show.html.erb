@@ -11,28 +11,27 @@
 
   <% if @cocktail.photo? %>
   <%= cl_image_tag @cocktail.photo.path, width: 400, height: 300, crop: :fill %>
+  <% else %>
+  <%= cl_image_tag "default_photo", height: 300, width: 400, crop: :fit %>
   <% end %>
 
   <p>
-  <br>
-  <br>
-   <strong>Ingredients <%= link_to new_cocktail_dose_path(@cocktail) do %>
-    <i class="fa fa-plus-square" aria-hidden="true"></i>
-    <% end %></strong>
-    <ul>
-      <% @cocktail.doses.each do |doses| %>
-      <li class="list-unstyled"><%= doses.description %> of <%= doses.ingredient.name %>
-       <%= link_to dose_path(doses), method: :delete do %>
-       <i class="fa fa-minus-circle"></i>
-       <% end %>
-       <% end %>
-     </li>
-   </ul>
- </p>
+    <br>
+    <br>
+    <strong>Ingredients <%= link_to new_cocktail_dose_path(@cocktail) do %>
+      <i class="fa fa-plus-square" aria-hidden="true"></i>
+      <% end %></strong>
+      <ul>
+        <% @cocktail.doses.each do |doses| %>
+        <li class="list-unstyled"><%= doses.description %> of <%= doses.ingredient.name %>
+         <%= link_to dose_path(doses), method: :delete do %>
+         <i class="fa fa-minus-circle"></i>
+         <% end %>
+         <% end %>
+       </li>
+     </ul>
+   </p>
 
-</div>
-
-
-
+ </div>
 
 
