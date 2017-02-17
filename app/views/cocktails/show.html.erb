@@ -4,6 +4,7 @@
   <p>
    <strong>Ingredients:</strong>
    <ul>
+
      <% @cocktail.doses.each do |doses| %>
      <li class="list-unstyled"><%= doses.description %> of <%= doses.ingredient.name %>
        <%= link_to dose_path(doses), method: :delete do %>
