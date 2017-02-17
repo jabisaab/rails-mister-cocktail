@@ -21,11 +21,13 @@
       <%= f.association :ingredient %>
       <%= f.submit class: "btn btn-primary" %>
       <% end %>
+      <br>
+      <%= link_to 'Show Cocktail', @cocktail_path %> |
+      <%= link_to 'Main Menu', cocktails_path %>
 
     </div>
   </div>
 </div>
 
 
-<%= link_to 'Show Cocktail', @cocktail_path %> |
-<%= link_to 'Main Menu', cocktails_path %>
+
